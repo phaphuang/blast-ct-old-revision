@@ -6,3 +6,5 @@ _unused
 *.dcm
 4_head__15__ax_edit_plane.nii.gz
 *.zip
+blast_ct/tmp
+*test.nii.gz

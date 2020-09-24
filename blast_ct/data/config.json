@@ -69,7 +69,7 @@
 		"keep_model_every": 400
 	},
 	"test": {
-		"batch_size": 32,
+		"batch_size": 16,
 		"input_patch_size": [110, 110, 110],
 		"num_workers": 1,
 		"eval_every": 2000
