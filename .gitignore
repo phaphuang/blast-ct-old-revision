@@ -4,5 +4,5 @@ _unused
 */__pycache__/*
 *.pyc
 *.dcm
-*.nii.gz
+4_head__15__ax_edit_plane.nii.gz
 *.zip
