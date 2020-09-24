@@ -13,7 +13,6 @@ class ModelInference(object):
         self.saver = saver
         self.saved_model_path = saved_model_path
         self.model.load_state_dict(torch.load(self.saved_model_path, map_location=self.device))
-        print(self.model)
         self.predict_fn = task_predict_fn_dict[task]
 
     def inference(self, dataloader):
