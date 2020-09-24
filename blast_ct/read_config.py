@@ -119,9 +119,10 @@ def get_test_loader(config, model, test_csv_path, use_cuda):
     test_loader = DataLoader(test_set,
                              batch_size=config['test']['batch_size'],
                              shuffle=False,
-                             num_workers=config['test']['num_workers'],
-                             worker_init_fn=worker_init_fn,
-                             pin_memory=True if use_cuda else False)
+                             #num_workers=config['test']['num_workers'],
+                             #worker_init_fn=worker_init_fn,
+                             #pin_memory=True if use_cuda else False
+                             )
     return test_loader
 
 
