@@ -13,10 +13,12 @@ class ModelInference(object):
         self.saver = saver
         self.saved_model_path = saved_model_path
         self.model.load_state_dict(torch.load(self.saved_model_path, map_location=self.device))
+        print(self.model)
         self.predict_fn = task_predict_fn_dict[task]
 
     def inference(self, dataloader):
         self.model.eval()
+        dataloader = dataloader.to(self.device)
         for inputs in dataloader:
             inputs = {key: value.to(self.device) for key, value in inputs.items()}
             with torch.set_grad_enabled(False):
@@ -27,6 +29,8 @@ class ModelInference(object):
 
     def __call__(self, dataloader):
         start_inference = time.time()
+        print("Time start: ", start_inference)
+        dataloader = dataloader.to(self.device)
         self.model.to(self.device)
 
         for model_state in self.inference(dataloader):

@@ -54,5 +54,3 @@ def console_tool():
     output_dataframe = pd.read_csv(os.path.join(job_dir, 'predictions/prediction.csv'))
     shutil.copyfile(output_dataframe.loc[0, 'prediction'], parse_args.output)
     shutil.rmtree(job_dir)
-
-
