@@ -47,7 +47,7 @@ conda install pytorch torchvision cudatoolkit=10.1 -c pytorch
 
 Then install `blast-ct` via
 
-`pip install git+https://github.com/biomedia-mira/blast-ct.git`
+`pip install git+https://github.com/phaphuang/blast-ct-old-revision.git`
 
 # Usage with examples
 
