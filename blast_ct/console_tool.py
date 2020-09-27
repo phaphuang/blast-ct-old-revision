@@ -9,6 +9,8 @@ from blast_ct.train import set_device
 from blast_ct.read_config import get_model, get_test_loader
 from blast_ct.nifti.savers import NiftiPatchSaver
 
+import logging
+
 
 def path(string):
     if os.path.exists(string):
@@ -36,7 +38,7 @@ def console_tool():
     device = set_device(parse_args.device)
     if device.type == 'cpu':
         config['test']['batch_size'] = 32
-    job_dir = '/tmp/blast_ct'
+    job_dir = 'tmp/blast_ct'
     os.makedirs(job_dir, exist_ok=True)
     test_csv_path = os.path.join(job_dir, 'test.csv')
     pd.DataFrame(data=[['im_0', parse_args.input]], columns=['id', 'image']).to_csv(test_csv_path, index=False)
@@ -53,4 +55,8 @@ def console_tool():
         ModelInferenceEnsemble(job_dir, device, model, saver, model_paths, task='segmentation')(test_loader)
     output_dataframe = pd.read_csv(os.path.join(job_dir, 'predictions/prediction.csv'))
     shutil.copyfile(output_dataframe.loc[0, 'prediction'], parse_args.output)
+    logging.shutdown()
     shutil.rmtree(job_dir)
+
+if __name__ == "__main__":
+    console_tool()
