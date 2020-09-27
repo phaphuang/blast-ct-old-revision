@@ -34,7 +34,7 @@ The output of our lesion segmentation tool is a segmentation map in NIfTI format
 ### Linux and MacOS
 On a fresh python3 virtual environment install `blast-ct` via
 
-`pip install git+https://github.com/biomedia-mira/blast-ct.git`
+`pip install https://github.com/phaphuang/blast-ct-old-revision.git`
 
 ### Windows
 If you are using miniconda, create a new conda environment and install PyTorch
@@ -47,7 +47,7 @@ conda install pytorch torchvision cudatoolkit=10.1 -c pytorch
 
 Then install `blast-ct` via
 
-`pip install git+https://github.com/biomedia-mira/blast-ct.git`
+`pip install git+https://github.com/phaphuang/blast-ct-old-revision.git`
 
 # Usage with examples
 
