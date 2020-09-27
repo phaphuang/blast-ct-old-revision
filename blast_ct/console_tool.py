@@ -57,6 +57,3 @@ def console_tool():
     shutil.copyfile(output_dataframe.loc[0, 'prediction'], parse_args.output)
     logging.shutdown()
     shutil.rmtree(job_dir)
-
-if __name__ == "__main__":
-    console_tool()
